@@ -19,11 +19,11 @@ let htmlText = readFileSync(htmlFilePath, 'utf8');
 htmlText = htmlText.replace('<div class="sponsors-box"></div>', () => {
 
     return `<div class="sponsors-box">${sponsors.map(sponsor => `<a class="sponsor" ` +
-    `href="${sponsor.url}" target="_blank" ` +
+    (sponsor.url ? `href="${sponsor.url}" target="_blank" ` : '') +
     `data-w="${sponsor.w}" data-h="${sponsor.h}"` +
     (sponsor.t ? `data-t="${sponsor.t}"` : `` ) +
-    `style="background-color: ${sponsor.color};">` +
-    `<img src="../sponsors/${sponsor.cover}" alt="${sponsor.title}">` +
+    `style="background:${sponsor.color};">` +
+    `<img src="sponsors/${sponsor.cover}" alt="${sponsor.title}">` +
         `<div class="content">` +
             `<h2>${sponsor.title}</h2>` +
             `<p>${sponsor.text}</p>` +
