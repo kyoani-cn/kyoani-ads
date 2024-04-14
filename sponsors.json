@@ -1,0 +1,131 @@
+[
+	{
+		"id": "cd",
+		"title": "cd",
+		"cover": "cd.png",
+		"w": 652,
+		"h": 577,
+		"color": "#e9e4dd",
+		"text": "cd",
+		"url": "https://weibo.com/2461163040/O7rnZmtN9"
+	},
+	{
+		"id": "only",
+		"title": "only",
+		"cover": "only.png",
+		"w": 908,
+		"h": 1404,
+		"color": "#2d343b",
+		"text": "only",
+		"url": "https://only.kyoani.cn"
+	},
+	{
+		"id": "kyoani-only-gz",
+		"title": "京阿尼Only广州",
+		"cover": "kyoani-only-guangzhou.jpg",
+		"w": 800,
+		"h": 856,
+		"color": "#98e9e2",
+		"text": "京阿尼Only广州",
+		"url": "https://icp.red/xLgJ9Ruie"
+	},
+	{
+		"id": "anibaka",
+		"title": "anibaka",
+		"cover": "anibaka.png",
+		"w": 442,
+		"h": 348,
+		"color": "#f8ded5",
+		"text": "anibaka",
+		"url": "https://kyoani.cn/anibaka"
+	},
+	{
+		"id": "aoi",
+		"title": "aoi",
+		"cover": "aoi.png",
+		"w": 464,
+		"h": 348,
+		"color": "#f0f1f2",
+		"text": "aoi"
+	},
+	{
+		"id": "hibiki_map",
+		"title": "hibiki_map",
+		"cover": "hibiki_map.png",
+		"w": 765,
+		"h": 598,
+		"color": "#2c3d55",
+		"text": "hibiki_map",
+		"url": "https://weibo.com/1197780522/NdJdS2Tnw"
+	},
+	{
+		"id": "黑泽",
+		"title": "黑泽",
+		"cover": "黑泽.png",
+		"w": 1027,
+		"h": 250,
+		"color": "#FFF",
+		"text": "黑泽",
+		"url": "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=2qqqX0mF2TUxUaK1Iq2x5J-mp7AQ9lOy&authKey=qwscmcyt5snvq0HrmBsYexh4o%2BBZpoIsyyBgDr8e%2FbA5GYz83L%2Bh3VXVoqeQyVEI&noverify=0&group_code=645336769"
+	},
+	{
+		"id": "white",
+		"title": "white",
+		"cover": "white.png",
+		"w": 769,
+		"h": 760,
+		"color": "#ede0e1",
+		"text": "white",
+		"url": "https://s.weibo.com/weibo?q=%23%E4%BA%AC%E5%90%B9%E7%99%BD%E8%89%B2%E6%83%85%E4%BA%BA%E8%8A%8212h%23"
+	},
+	{
+		"id": "enazo",
+		"title": "enazo",
+		"cover": "enazo.png",
+		"w": 771,
+		"h": 547,
+		"color": "#f9ece6",
+		"text": "enazo",
+		"t": -36,
+		"url": "https://enazo.cn"
+	},
+	{
+		"id": "kumiko",
+		"title": "kumiko",
+		"cover": "kumiko.png",
+		"w": 647,
+		"h": 546,
+		"color": "#4c3026",
+		"text": "kumiko"
+	},
+	{
+		"id": "sos",
+		"title": "sos",
+		"cover": "sos.png",
+		"w": 642,
+		"h": 305,
+		"color": "#FFF",
+		"text": "sos",
+		"url": "https://haruhifanclub.com/"
+	},
+	{
+		"id": "anitabi",
+		"title": "anitabi",
+		"cover": "anitabi.png",
+		"w": 769,
+		"h": 477,
+		"color": "#346cab",
+		"text": "anitabi",
+		"url": "https://anitabi.cn/map?bangumiId=115908"
+	},
+	{
+		"id": "kyoani",
+		"title": "kyoani",
+		"cover": "kyoani.png",
+		"w": 656,
+		"h": 250,
+		"color": "#FFF",
+		"text": "kyoani",
+		"url": "https://kyoani.cn"
+	}
+]

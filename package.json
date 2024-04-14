@@ -1,0 +1,26 @@
+{
+  "name": "kyoani-ads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "node build.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyoani-cn/kyoani-ads.git"
+  },
+  "keywords": [
+    "kyoani"
+  ],
+  "author": "itorr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyoani-cn/kyoani-ads/issues"
+  },
+  "homepage": "https://github.com/kyoani-cn/kyoani-ads#readme",
+  "dependencies": {
+    "get-image-colors": "^4.0.1",
+    "image-size": "^1.1.1"
+  }
+}
