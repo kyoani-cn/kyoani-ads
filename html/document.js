@@ -22,8 +22,12 @@ const resize = ()=>{
     const colTops = Array.from({length: colsNumber}, () => 0);
 
     sponsorEls.forEach(sponsorEl => {
-        const sponsor = sponsorEl.sponsor;
-        const sponsorT = sponsor.t || 0;
+        const sponsor = {
+            w: +sponsorEl.dataset.w,
+            h: +sponsorEl.dataset.h,
+            t: +sponsorEl.dataset.t || 0
+        };
+        const sponsorT = sponsor.t;
         const scale = sponsor.w / ( sponsor.h + sponsorT );
         const width = colWidth;
         const height = Math.round(width / scale);
@@ -38,30 +42,46 @@ const resize = ()=>{
     const allHeight = Math.max(...colTops) + itemBorder;
 
     sponsorsEl.style.height = allHeight + 'px';
+};
+
+function debounce(fn, wait) {
+    var timeout = null;
+    return function() {
+        if(timeout !== null) 
+                clearTimeout(timeout);
+        timeout = setTimeout(fn, wait);
+    }
+}
+const throttle = function(func, delay) {
+    let prev = Date.now();
+    return function() {
+        const context = this;
+        const args = arguments;
+        const now = Date.now();
+        if (now - prev >= delay) {
+            func.apply(context, args);
+            prev = Date.now();
+        }
+    }
 }
 
-fetch('sponsors.json').then(response => response.json()).then(sponsors => {
-
-    sponsors.forEach(sponsor => {
-        
-        const sponsorEl = document.createElement('a');
-        sponsorEl.classList.add('sponsor');
-        sponsorEl.sponsor = sponsor;
-        sponsorEl.style.cssText = `
-            background-color: ${sponsor.color};
-        `;
-        if(sponsor.url) sponsorEl.href = sponsor.url;
-        sponsorEl.target = '_blank';
-        sponsorEl.innerHTML = `
-            <img src="sponsors/${sponsor.cover}" alt="${sponsor.title}">
-            <div class="content">
-                <h2>${sponsor.title}</h2>
-                <p>${sponsor.text}</p>
-            </div>
-        `;
-        sponsorsEl.appendChild(sponsorEl);
-    });
+if(sponsorsEl.innerHTML){
     resize();
-    window.addEventListener('resize', resize);
-
-});
+    window.addEventListener('resize', debounce(resize,100));
+}else{
+    fetch('../sponsors.json').then(response => response.json()).then(sponsors => {
+        sponsorsEl.innerHTML = sponsors.map(sponsor => `<a class="sponsor" 
+            href="${sponsor.url}" target="_blank" 
+            data-w="${sponsor.w}" data-h="${sponsor.h}"
+            data-t="${sponsor.t||0}"
+            style="background-color: ${sponsor.color};">
+                <img src="../sponsors/${sponsor.cover}" alt="${sponsor.title}">
+                <div class="content">
+                    <h2>${sponsor.title}</h2>
+                    <p>${sponsor.text}</p>
+                </div>
+            </a>`).join('');
+        resize();
+        window.addEventListener('resize', debounce(resize,100));
+    });
+}
