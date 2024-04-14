@@ -1,7 +1,7 @@
 [
 	{
 		"id": "cd",
-		"title": "cd",
+		"title": "CD27 京阿尼街道",
 		"cover": "cd.png",
 		"w": 652,
 		"h": 577,
@@ -11,7 +11,7 @@
 	},
 	{
 		"id": "only",
-		"title": "only",
+		"title": "京阿尼Only上海",
 		"cover": "only.png",
 		"w": 908,
 		"h": 1404,
@@ -31,7 +31,7 @@
 	},
 	{
 		"id": "anibaka",
-		"title": "anibaka",
+		"title": "动画日常整理计划",
 		"cover": "anibaka.png",
 		"w": 442,
 		"h": 348,
@@ -51,7 +51,7 @@
 	},
 	{
 		"id": "hibiki_map",
-		"title": "hibiki_map",
+		"title": "无料吹响吧上低音号巡礼手绘地图派送中",
 		"cover": "hibiki_map.png",
 		"w": 765,
 		"h": 598,
@@ -61,7 +61,7 @@
 	},
 	{
 		"id": "黑泽",
-		"title": "黑泽",
+		"title": "黑泽朋世来沪",
 		"cover": "黑泽.png",
 		"w": 1027,
 		"h": 250,
@@ -71,7 +71,7 @@
 	},
 	{
 		"id": "white",
-		"title": "white",
+		"title": "#京吹白色情人节12h#",
 		"cover": "white.png",
 		"w": 769,
 		"h": 760,
@@ -81,7 +81,7 @@
 	},
 	{
 		"id": "enazo",
-		"title": "enazo",
+		"title": "绘谜画猜 x 京阿尼主题绘",
 		"cover": "enazo.png",
 		"w": 771,
 		"h": 547,
@@ -92,7 +92,7 @@
 	},
 	{
 		"id": "kumiko",
-		"title": "kumiko",
+		"title": "久美子俺老婆！",
 		"cover": "kumiko.png",
 		"w": 647,
 		"h": 546,
@@ -101,7 +101,7 @@
 	},
 	{
 		"id": "sos",
-		"title": "sos",
+		"title": "凉宫春日应援团，图书漂流计划",
 		"cover": "sos.png",
 		"w": 642,
 		"h": 305,
@@ -111,7 +111,7 @@
 	},
 	{
 		"id": "anitabi",
-		"title": "anitabi",
+		"title": "动画巡礼地图",
 		"cover": "anitabi.png",
 		"w": 769,
 		"h": 477,
@@ -121,12 +121,12 @@
 	},
 	{
 		"id": "kyoani",
-		"title": "kyoani",
+		"title": "粳米团子施工计划",
 		"cover": "kyoani.png",
 		"w": 656,
 		"h": 250,
 		"color": "#FFF",
-		"text": "kyoani",
-		"url": "https://kyoani.cn"
+		"text": "京都动画粉丝网站企划中，结构化数据，版本管理，京蜜日常，粳米路标，粳米绘，同人游戏",
+		"url": "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=3SbEwyhLzeN4EiLdjTJRjYs4tY4mRl9S&authKey=7rf1IY6JZ9YuIP91dLys9oG4o%2FrxYtTOYcxTqMJvn5vk7sGNdLl8AVGBP8INrM9f&noverify=0&group_code=756176796"
 	}
 ]

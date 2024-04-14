@@ -12,21 +12,21 @@ if(!existsSync(buildFolder)) {
 
 
 const htmlFilePath = 'html/index.html';
-const sponsorsJSONFilePath = 'sponsors.json';
-const sponsors = JSON.parse(readFileSync(sponsorsJSONFilePath, 'utf8'));
+const articlesJSONFilePath = 'articles.json';
+const articles = JSON.parse(readFileSync(articlesJSONFilePath, 'utf8'));
 let htmlText = readFileSync(htmlFilePath, 'utf8');
 
-htmlText = htmlText.replace('<div class="sponsors-box"></div>', () => {
+htmlText = htmlText.replace('<div class="articles-box"></div>', () => {
 
-    return `<div class="sponsors-box">${sponsors.map(sponsor => `<a class="sponsor" ` +
-    (sponsor.url ? `href="${sponsor.url}" ` : '') +
-    `data-w="${sponsor.w}" data-h="${sponsor.h}"` +
-    (sponsor.t ? `data-t="${sponsor.t}"` : `` ) +
-    `style="background:${sponsor.color};">` +
-    `<img src="sponsors/${sponsor.cover}" alt="${sponsor.title}">` +
+    return `<div class="articles-box">${articles.map(article => `<a class="article" ` +
+    (article.url ? `href="${article.url}" ` : '') +
+    `data-w="${article.w}" data-h="${article.h}"` +
+    (article.t ? `data-t="${article.t}"` : `` ) +
+    `style="background:${article.color};">` +
+    `<img src="articles/${article.cover}" alt="${article.title}">` +
         `<div class="content">` +
-            `<h2>${sponsor.title}</h2>` +
-            `<p>${sponsor.text}</p>` +
+            `<h2>${article.title}</h2>` +
+            `<p>${article.text}</p>` +
         `</div>` +
     `</a>`).join('')}</div>`;
 });
@@ -44,16 +44,16 @@ const copyFileSync = (src, dest) => {
 
 
 
-// 复制 sponsors 目录下所有文件到 build 目录
-const sponsorsFolder = 'sponsors/';
-const buildSponsorsFolder = 'build/sponsors/';
-if(!existsSync(buildSponsorsFolder)) {
-    mkdirSync(buildSponsorsFolder);
+// 复制 articles 目录下所有文件到 build 目录
+const articlesFolder = 'articles/';
+const buildarticlesFolder = 'build/articles/';
+if(!existsSync(buildarticlesFolder)) {
+    mkdirSync(buildarticlesFolder);
 }
 
-const fileInfos = readdirSync(sponsorsFolder);
+const fileInfos = readdirSync(articlesFolder);
 for(const fileInfo of fileInfos) {
-    copyFileSync(`${sponsorsFolder}${fileInfo}`, `${buildSponsorsFolder}${fileInfo}`);
+    copyFileSync(`${articlesFolder}${fileInfo}`, `${buildarticlesFolder}${fileInfo}`);
 }
 
 
