@@ -74,7 +74,7 @@ if(sponsorsEl.innerHTML){
 	fetch('../sponsors.json').then(response => response.json()).then(sponsors => {
 		sponsorsEl.innerHTML = sponsors.map(sponsor => `<a class="sponsor" ` +
 			`href="${sponsor.url}" target="_blank" ` +
-			`data-w="${sponsorW}" data-h="${sponsorH}"` +
+			`data-w="${sponsor.w}" data-h="${sponsor.h}"` +
 			(sponsor.t ? `data-t="${sponsor.t}"` : `` ) +
 			`style="background-color: ${sponsor.color};">` +
 			`<img src="../sponsors/${sponsor.cover}" alt="${sponsor.title}">` +
