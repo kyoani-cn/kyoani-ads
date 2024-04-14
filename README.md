@@ -1,6 +1,6 @@
 # 「粳米路标」京都动画爱好者同人创作相关广告页
 
-地址： https://kyoani.cn
+地址： https://kyoani.cn/?b
 
 
 ## build
