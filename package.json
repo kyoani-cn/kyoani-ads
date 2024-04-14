@@ -21,6 +21,8 @@
   "homepage": "https://github.com/kyoani-cn/kyoani-ads#readme",
   "dependencies": {
     "get-image-colors": "^4.0.1",
-    "image-size": "^1.1.1"
+    "html-minifier": "^4.0.0",
+    "image-size": "^1.1.1",
+    "uglify-js": "^3.17.4"
   }
 }

@@ -2,3 +2,4 @@ node_modules/*
 *.css
 package-lock.json
 sponsors-origin/*
+build/*
