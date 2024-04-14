@@ -12,6 +12,8 @@ const articlesEl = $('.articles-box');
 
 const defaultWidth = 420;
 const itemBorder = 2;
+let articleEls = $$('.article');
+const align = 'top';
 const resize = ()=>{
 
 	const allWidth = articlesEl.clientWidth;
@@ -20,28 +22,55 @@ const resize = ()=>{
 	console.log('colsNumber', colsNumber);
 	console.log('colWidth', colWidth);
 
-	const colTops = Array.from({length: colsNumber}, () => 0);
+	if(align === 'top') {
+		// 上对齐
+		const colTops = Array.from({length: colsNumber}, () => 0);
 
-	const articleEls = $$('.article');
-	articleEls.forEach(articleEl => {
-		const dataset = articleEl.dataset;
-		const articleW = +dataset.w;
-		const articleH = +dataset.h;
-		const articleT = +dataset.t || 0;
-		const scale = articleW / ( articleH + articleT );
-		const width = colWidth;
-		const height = Math.round(width / scale);
-		const top = Math.min(...colTops) + 1;
-		const col = colTops.indexOf(Math.min(...colTops));
-		const left = col * (colWidth + itemBorder) + 1;
+		articleEls.forEach(articleEl => {
+			const dataset = articleEl.dataset;
+			const articleW = +dataset.w;
+			const articleH = +dataset.h;
+			const articleT = +dataset.t || 0;
+			const scale = articleW / ( articleH + articleT );
+			const width = colWidth;
+			const height = Math.round(width / scale);
+			const top = Math.min(...colTops) + 1;
+			const col = colTops.indexOf(Math.min(...colTops));
+			const left = col * (colWidth + itemBorder) + 1;
+			
+			articleEl.style.cssText = `width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText = `margin-top:${articleT/articleW*width}px`;
+			colTops[col] = top - 1 + height + itemBorder;
+		});
+		const allHeight = Math.max(...colTops) + itemBorder;
+		articlesEl.style.height = allHeight + 'px';
+	}else if(align === 'bottom') {
+		// 下对齐
+		const colBottoms = Array.from({length: colsNumber}, () => 0);
 		
-		articleEl.style.cssText = `width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
-		$( 'img', articleEl ).style.cssText = `margin-top:${articleT/articleW*width}px`;
-		colTops[col] = top - 1 + height + itemBorder;
-	});
-	const allHeight = Math.max(...colTops) + itemBorder;
+		for(let i = articleEls.length - 1; i >= 0; i--) {
+			const articleEl = articleEls[i];
+			const dataset = articleEl.dataset;
+			const articleW = +dataset.w;
+			const articleH = +dataset.h;
+			const articleT = +dataset.t || 0;
+			const scale = articleW / ( articleH + articleT );
+			const width = colWidth;
+			const height = Math.round(width / scale);
+			const bottom = Math.min(...colBottoms) + 1;
+			const col = colBottoms.indexOf(Math.min(...colBottoms));
+			const left = col * (colWidth + itemBorder) + 1;
 
-	articlesEl.style.height = allHeight + 'px';
+			articleEl.style.cssText = `width:${width}px;height:${height}px;bottom:${bottom}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText = `margin-top:${articleT/articleW*width}px`;
+			colBottoms[col] = bottom - 1 + height + itemBorder;
+			
+
+		}
+		const allHeight = Math.max(...colBottoms) + itemBorder;
+		articlesEl.style.height = allHeight + 'px';
+		
+	}
 };
 
 function debounce(fn, wait) {
@@ -83,6 +112,7 @@ if(articlesEl.innerHTML){
 					`<p>${article.text}</p>` +
 				`</div>` +
 			`</a>`).join('');
+		articleEls = $$('.article');
 		resize();
 		window.addEventListener('resize', debounce(resize,100));
 	});
