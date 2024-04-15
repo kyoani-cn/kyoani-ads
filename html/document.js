@@ -38,8 +38,8 @@ const resize = ()=>{
 			const col = colTops.indexOf(Math.min(...colTops));
 			const left = col * (colWidth + itemBorder) + 1;
 			
-			articleEl.style.cssText = `width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
-			$( 'img', articleEl ).style.cssText = `margin-top:${articleT/articleW*width}px`;
+			articleEl.style.cssText += `width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText += `margin-top:${articleT/articleW*width}px`;
 			colTops[col] = top - 1 + height + itemBorder;
 		});
 		const allHeight = Math.max(...colTops) + itemBorder;
@@ -61,8 +61,8 @@ const resize = ()=>{
 			const col = colBottoms.indexOf(Math.min(...colBottoms));
 			const left = col * (colWidth + itemBorder) + 1;
 
-			articleEl.style.cssText = `width:${width}px;height:${height}px;bottom:${bottom}px;left:${left}px`;
-			$( 'img', articleEl ).style.cssText = `margin-top:${articleT/articleW*width}px`;
+			articleEl.style.cssText += `width:${width}px;height:${height}px;bottom:${bottom}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText += `margin-top:${articleT/articleW*width}px`;
 			colBottoms[col] = bottom - 1 + height + itemBorder;
 			
 
@@ -95,17 +95,31 @@ const throttle = function(func, delay) {
 }
 
 // build shift
-
-if(articlesEl.innerHTML){
+const imageLoaded = el=>{
+	el.setAttribute('data-loaded', true);
+}
+const imageOnload = e=>{
+	const imgEl = e.target;
+	if(imgEl.complete) return imageLoaded(imgEl);
+	imgEl.addEventListener('load', imageLoaded(imgEl));
+}
+const bindAll = ()=>{
+	$$('.article img').forEach(imgEl => {
+		imgEl.addEventListener('load', imageOnload);
+	});
 	resize();
 	window.addEventListener('resize', debounce(resize,100));
+}
+
+if(articlesEl.innerHTML){
+	bindAll();
 }else{
 	fetch('../articles.json').then(response => response.json()).then(articles => {
 		articlesEl.innerHTML = articles.map(article => `<a class="article" ` +
-			`href="${article.url}" target="_blank" ` +
+			(article.url ? `href="${article.url}" `: '') +
 			`data-w="${article.w}" data-h="${article.h}"` +
 			(article.t ? `data-t="${article.t}"` : `` ) +
-			`style="background-color: ${article.color};">` +
+			`style="--color: ${article.color};">` +
 			`<img src="../articles/${article.cover}" alt="${article.title}">` +
 				`<div class="content">` +
 					`<h2>${article.title}</h2>` +
@@ -113,7 +127,6 @@ if(articlesEl.innerHTML){
 				`</div>` +
 			`</a>`).join('');
 		articleEls = $$('.article');
-		resize();
-		window.addEventListener('resize', debounce(resize,100));
+		bindAll();
 	});
 }
