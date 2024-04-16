@@ -38,8 +38,8 @@ const resize = ()=>{
 			const col = colTops.indexOf(Math.min(...colTops));
 			const left = col * (colWidth + itemBorder) + 1;
 			
-			articleEl.style.cssText += `width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
-			$( 'img', articleEl ).style.cssText += `margin-top:${articleT/articleW*width}px`;
+			articleEl.style.cssText += `;width:${width}px;height:${height}px;top:${top}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText += `;margin-top:${articleT/articleW*width}px`;
 			colTops[col] = top - 1 + height + itemBorder;
 		});
 		const allHeight = Math.max(...colTops) + itemBorder;
@@ -61,8 +61,8 @@ const resize = ()=>{
 			const col = colBottoms.indexOf(Math.min(...colBottoms));
 			const left = col * (colWidth + itemBorder) + 1;
 
-			articleEl.style.cssText += `width:${width}px;height:${height}px;bottom:${bottom}px;left:${left}px`;
-			$( 'img', articleEl ).style.cssText += `margin-top:${articleT/articleW*width}px`;
+			articleEl.style.cssText += `;width:${width}px;height:${height}px;bottom:${bottom}px;left:${left}px`;
+			$( 'img', articleEl ).style.cssText += `;margin-top:${articleT/articleW*width}px`;
 			colBottoms[col] = bottom - 1 + height + itemBorder;
 			
 
@@ -94,7 +94,7 @@ const throttle = function(func, delay) {
 	}
 }
 
-// build shift
+
 const imageLoaded = el=>{
 	el.setAttribute('data-loaded', true);
 }
@@ -110,7 +110,7 @@ const bindAll = ()=>{
 	resize();
 	window.addEventListener('resize', debounce(resize,100));
 }
-
+// build shift
 if(articlesEl.innerHTML){
 	bindAll();
 }else{

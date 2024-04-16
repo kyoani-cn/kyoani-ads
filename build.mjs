@@ -22,7 +22,7 @@ htmlText = htmlText.replace('<div class="articles-box"></div>', () => {
     (article.url ? `href="${article.url}" ` : '') +
     `data-w="${article.w}" data-h="${article.h}"` +
     (article.t ? `data-t="${article.t}"` : `` ) +
-    `style="background:${article.color};">` +
+    `style="--color:${article.color};">` +
     `<img src="articles/${article.cover}" alt="${article.title}">` +
         `<div class="content">` +
             `<h2>${article.title}</h2>` +
@@ -68,7 +68,7 @@ const jsBuildFilePath = 'build/document.js';
 
 let jsText = readFileSync(jsFilePath, 'utf8');
 
-jsText = jsText.replace('// build shift', '/*') + `*/\nresize();window.addEventListener('resize', debounce(resize,100));`;
+jsText = jsText.replace('// build shift', '/*') + `*/\n;bindAll();`;
 
 jsText = `(()=>{${jsText}})();`;
 // 使用 uglifyjs 进行压缩
