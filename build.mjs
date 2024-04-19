@@ -1,15 +1,15 @@
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'fs';
 
 
 
 
 const buildFolder = 'build/';
 
+// 清空 build 目录，重新生成
+rmSync(buildFolder, { recursive: true, force: true });
 
-if(!existsSync(buildFolder)) {
-    mkdirSync(buildFolder);
-}
 
+mkdirSync(buildFolder);
 
 const htmlFilePath = 'html/index.html';
 const articlesJSONFilePath = 'articles.json';
@@ -44,16 +44,15 @@ const copyFileSync = (src, dest) => {
 
 
 
-// 复制 articles 目录下所有文件到 build 目录
+// 复制所有封面文件到 build 目录
 const articlesFolder = 'articles/';
 const buildarticlesFolder = 'build/articles/';
 if(!existsSync(buildarticlesFolder)) {
     mkdirSync(buildarticlesFolder);
 }
 
-const fileInfos = readdirSync(articlesFolder);
-for(const fileInfo of fileInfos) {
-    copyFileSync(`${articlesFolder}${fileInfo}`, `${buildarticlesFolder}${fileInfo}`);
+for(const article of articles) {
+    copyFileSync(`${articlesFolder}${article.cover}`, `${buildarticlesFolder}${article.cover}`);
 }
 
 
