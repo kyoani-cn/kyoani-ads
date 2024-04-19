@@ -30,6 +30,17 @@
 		"url": "https://icp.red/xLgJ9Ruie"
 	},
 	{
+		"id":"special-exhibition",
+		"title":"京阿尼特别展",
+		"cover":"special_exhibition.png",
+		"w": 875,
+		"h": 376,
+		"color": "#ffc018",
+		"text": "京阿尼特别展",
+		"url": "https://www.kyotoanimation.co.jp/event/special_exhibition/"
+
+	},
+	{
 		"id": "anibaka",
 		"title": "动画日常整理计划",
 		"cover": "anibaka.png",
@@ -40,6 +51,16 @@
 		"url": "https://kyoani.cn/anibaka"
 	},
 	{
+		"id": "eupho3",
+		"title": "響け！ユーフォニアム3",
+		"cover": "keyvisual02.webp",
+		"w": 1200,
+		"h": 1696,
+		"color": "#f8f8f8",
+		"text": "響け！ユーフォニアム3",
+		"url": "https://anime-eupho.com/"
+	},
+	{
 		"id": "aoi",
 		"title": "aoi",
 		"cover": "aoi.png",
@@ -48,6 +69,26 @@
 		"color": "#f0f1f2",
 		"text": "aoi",
 		"url": "https://weibo.com/u/6442191822"
+	},
+	{
+		"id": "kyokai-10th",
+		"title": "境界的彼方十周年活动",
+		"cover": "kyokai-10th.webp",
+		"w": 800,
+		"h": 562,
+		"color": "#fde163",
+		"text": "境界的彼方十周年活动",
+		"url": "https://tv.anime-kyokai.com/10th-anniversary/"
+	},
+	{
+		"id":"tamakomarket-10th-event-visual",
+		"title":"玉子市场10周年活动",
+		"cover":"tamakomarket-10th-event-visual.webp",
+		"w": 800,
+		"h": 540,
+		"color": "#f8f8f8",
+		"text": "玉子市场10周年活动",
+		"url": "https://tamakomarket.com/10th-event/"
 	},
 	{
 		"id": "hibiki_map",
