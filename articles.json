@@ -1,5 +1,15 @@
 [
 	{
+		"id": "kitauji-gwent",
+		"title": "北宇治昆特牌",
+		"cover": "kitauji-gwent.png",
+		"w": 1709,
+		"h": 1018,
+		"color": "#FFF",
+		"text": "kitauji-gwent",
+		"url": "https://kitauji-gwent.com/"
+	},
+	{
 		"id": "cd",
 		"title": "CD27 京阿尼街道",
 		"cover": "cd.png",
