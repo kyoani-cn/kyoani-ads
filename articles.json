@@ -10,6 +10,16 @@
 		"url": "https://kitauji-gwent.com/"
 	},
 	{
+		"id": "sensei",
+		"title": "酷米空",
+		"cover": "sensei.png",
+		"w": 736,
+		"h": 645,
+		"color": "#FFF",
+		"text": "sensei",
+		"url": "https://sensei.kyoani.cn"
+	},
+	{
 		"id": "cd",
 		"title": "CD27 京阿尼街道",
 		"cover": "cd.png",
